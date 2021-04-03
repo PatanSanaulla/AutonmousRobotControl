@@ -12,24 +12,24 @@ trig = 16
 echo = 18
 
 def distance():
-    gpio.setmode(gpio.BOARD)
-    gpio.setup(trig, gpio.OUT)
-    gpio.setup(echo, gpio.IN)
+    GPIO.setmode(GPIO.BOARD)
+    GPIO.setup(trig, GPIO.OUT)
+    GPIO.setup(echo, GPIO.IN)
     
     #Ensure outout has no value
-    gpio.output(trig, False)
+    GPIO.output(trig, False)
     time.sleep(0.01)
 
     #Generate Trigger pulse
-    gpio.output(trig, True)
+    GPIO.output(trig, True)
     time.sleep(0.00001)
-    gpio.output(trig, False)
+    GPIO.output(trig, False)
 
     #Generate Echo time signal
-    while gpio.input(echo) == 0:
+    while GPIO.input(echo) == 0:
         pulse_start = time.time()
 
-    while gpio.input(echo) == 1:
+    while GPIO.input(echo) == 1:
         pulse_end = time.time()
 
     pulse_duration = pulse_end - pulse_start
@@ -39,7 +39,7 @@ def distance():
     distance = round(distance, 2)
         
     #clear the output pins
-    gpio.cleanup()
+    #GPIO.cleanup()
         
     return distance
 

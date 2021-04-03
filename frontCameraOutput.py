@@ -16,7 +16,7 @@ time.sleep(0.1)
 
 # define the codec and create VideoWriter object
 fourcc = cv2.VideoWriter_fourcc(*'XVID')
-out = cv2.VideoWriter('CameraOutput.avi', fourcc, 10, (640, 480))
+out = cv2.VideoWriter('CameraOutput01.avi', fourcc, 10, (640, 480))
 
 # write frame to video file
 # keep looping
