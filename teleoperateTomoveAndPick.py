@@ -101,7 +101,7 @@ def closeGripper():
         duty += rate
         pwm.ChangeDutyCycle(duty)
         time.sleep(0.2)
-        if duty >= 5:#6.25:
+        if duty >= 6.5:#6.25:
             break
     pwm.stop()
     #clear the output pins
@@ -178,12 +178,12 @@ def key_input(event):
     else:
         print("Invalid key pressed!")
     
-    distance_sum = 0;
-    for i in range(0,10):
-        distance_sum = distance_sum + distance()
+    #distance_sum = 0;
+    #for i in range(0,10):
+    #    distance_sum = distance_sum + distance()
     
-    avg_distance = distance_sum / 10
-    print("Distance for closest object in the front: "+str(avg_distance)+"cm")
+    #avg_distance = distance_sum / 10
+    #print("Distance for closest object in the front: "+str(avg_distance)+"cm")
 
 if __name__ == '__main__':
 
